@@ -1,24 +1,26 @@
-/**
+//**
  * OOPS Banner App
- * UC3 - Print OOPS Banner using String.join() 
+ * UC4 - Print OOPS Banner with help of arrays
  * @author Mugesh Krishna
- * @version 3.0
+ * @version 4.0
  */
 
 public class OOPSBannerApp {
+
     public static void main(String[] args) {
 
+        String[] banner = new String[7];
 
-        System.out.println("OOPS");
+        banner[0] = String.join("   ", " *****  ", " *****  ", " ****** ", "  ***** ");
+        banner[1] = String.join("   ", "*     * ", "*     * ", "*     * ", " *     * ");
+        banner[2] = String.join("   ", "*     * ", "*     * ", "*     * ", " *     ");
+        banner[3] = String.join("   ", "*     * ", " *****  ", " ****** ", " *****  ");
+        banner[4] = String.join("   ", "*     * ", "*       ", "*       ", "      * ");
+        banner[5] = String.join("   ", "*     * ", "*       ", "*       ", "*     * ");
+        banner[6] = String.join("   ", " *****  ", "* ",       "*       ", " *****  ");
 
-        System.out.println(String.join("   ***  ","    ***   ","  ******  ","   *****  ");
-        System.out.println(String.join("  **  ** ","  **  ** ","  **   **  "," **      ");
-        System.out.println(String.join(" **    ** ","**    ** "," **   **  "," **      ");
-        System.out.println(String.join(" **    ** ","**    **  ","******     "," ***   ");
-        System.out.println(String.join(" **    ** ","**    **  ","**           ","  ** ");
-        System.out.println(String.join("  **  **   ","**  **   ","**           ","  ** ");
-        System.out.println(String.join("   ***      ","***     ","**        "," *****  ");
-
-
+        for (String line : banner) {
+            System.out.println(line);
+        }
     }
 }
