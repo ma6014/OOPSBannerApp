@@ -1,22 +1,24 @@
 /**
  * OOPS Banner App
- * UC2 - Print OOPS in Banner Format
+ * UC3 - Print OOPS Banner using String.join() 
  * @author Mugesh Krishna
- * @version 2.0
+ * @version 3.0
  */
 
 public class OOPSBannerApp {
-
     public static void main(String[] args) {
 
-        System.out.println("   ***   " + "   ***   " + " ******  " + " ***** ");
-        System.out.println("  **  ** " + "  **  ** " + " **   ** " + " **    ");
-        System.out.println(" **    **" + " **    **" + " **   ** " + " **    ");
-        System.out.println(" **    **" + " **    **" + " ******  " + "  ***  ");
-        System.out.println(" **    **" + " **    **" + " **      " + "    ** ");
-        System.out.println("  **  ** " + "  **  ** " + " **      " + "    ** ");
-        System.out.println("   ***   " + "   ***   " + " **      " + " ***** ");
+
+        System.out.println("OOPS");
+
+        System.out.println(String.join("   ***  ","    ***   ","  ******  ","   *****  ");
+        System.out.println(String.join("  **  ** ","  **  ** ","  **   **  "," **      ");
+        System.out.println(String.join(" **    ** ","**    ** "," **   **  "," **      ");
+        System.out.println(String.join(" **    ** ","**    **  ","******     "," ***   ");
+        System.out.println(String.join(" **    ** ","**    **  ","**           ","  ** ");
+        System.out.println(String.join("  **  **   ","**  **   ","**           ","  ** ");
+        System.out.println(String.join("   ***      ","***     ","**        "," *****  ");
+
 
     }
 }
-
