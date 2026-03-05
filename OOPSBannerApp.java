@@ -1,15 +1,22 @@
-
 /**
  * OOPS Banner App
- * UC1 - Print OOPS 
+ * UC2 - Print OOPS in Banner Format
  * @author Mugesh Krishna
- * @version 1.0
+ * @version 2.0
  */
 
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        System.out.println("OOPS");
+        System.out.println("   ***   " + "   ***   " + " ******  " + " ***** ");
+        System.out.println("  **  ** " + "  **  ** " + " **   ** " + " **    ");
+        System.out.println(" **    **" + " **    **" + " **   ** " + " **    ");
+        System.out.println(" **    **" + " **    **" + " ******  " + "  ***  ");
+        System.out.println(" **    **" + " **    **" + " **      " + "    ** ");
+        System.out.println("  **  ** " + "  **  ** " + " **      " + "    ** ");
+        System.out.println("   ***   " + "   ***   " + " **      " + " ***** ");
+
     }
 }
+
