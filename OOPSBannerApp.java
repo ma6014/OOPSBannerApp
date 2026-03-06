@@ -1,78 +1,77 @@
 /**
  * OOPS Banner App
- * UC6 - Refactor Banner Logic into Functions
+ * UC7 - Store Character Pattern in a Class
  * @author Mugesh Krishna
- * @version 6.0
+ * @version 7.0
  */
 
 public class OOPSBannerApp {
 
-    public static void main(String[] args) {
+    public static class CharacterPatternMap {
 
-        String[] banner = {
-            buildLine(0),
-            buildLine(1),
-            buildLine(2),
-            buildLine(3),
-            buildLine(4),
-            buildLine(5),
-            buildLine(6)
-        };
+        private final char character;
+        private final String[] pattern;
 
-        for (String line : banner) {
-            System.out.println(line);
+        public CharacterPatternMap(char character, String[] pattern) {
+            this.character = character;
+            this.pattern = pattern;
+        }
+
+        public char getCharacter() {
+            return character;
+        }
+
+        public String getPatternRow(int row) {
+            return pattern[row];
         }
     }
 
-    // Helper method to assemble full banner row
-    public static String buildLine(int row) {
-        return String.join("   ",
-                getOPattern(row),
-                getOPattern(row),
-                getPPattern(row),
-                getSPattern(row)
-        );
+    public static String buildBannerRow(int row, CharacterPatternMap[] characters) {
+        StringBuilder sb = new StringBuilder();
+
+        for (CharacterPatternMap cp : characters) {
+            sb.append(cp.getPatternRow(row)).append("   ");
+        }
+
+        return sb.toString();
     }
 
-    // O Pattern
-    public static String getOPattern(int row) {
-        String[] O = {
-            " *****  ",
-            "*     * ",
-            "*     * ",
-            "*     * ",
-            "*     * ",
-            "*     * ",
-            " *****  "
-        };
-        return O[row];
-    }
+    public static void main(String[] args) {
 
-    // P Pattern
-    public static String getPPattern(int row) {
-        String[] P = {
-            " ****** ",
-            "*     * ",
-            "*     * ",
-            " ****** ",
-            "*        ",
-            "*        ",
-            "*        "
-        };
-        return P[row];
-    }
+        CharacterPatternMap O = new CharacterPatternMap('O', new String[]{
+                " *****  ",
+                "*     * ",
+                "*     * ",
+                "*     * ",
+                "*     * ",
+                "*     * ",
+                " *****  "
+        });
 
-    // S Pattern
-    public static String getSPattern(int row) {
-        String[] S = {
-            "  *****  ",
-            " *     * ",
-            " *        ",
-            "  *****  ",
-            "       * ",
-            " *     * ",
-            "  *****  "
-        };
-        return S[row];
+        CharacterPatternMap P = new CharacterPatternMap('P', new String[]{
+                " ****** ",
+                "*     * ",
+                "*     * ",
+                " ****** ",
+                "*        ",
+                "*        ",
+                "*        "
+        });
+
+        CharacterPatternMap S = new CharacterPatternMap('S', new String[]{
+                "  *****  ",
+                " *     * ",
+                " *        ",
+                "  *****  ",
+                "       * ",
+                " *     * ",
+                "  *****  "
+        });
+
+        CharacterPatternMap[] bannerChars = { O, O, P, S };
+
+        for (int i = 0; i < 7; i++) {
+            System.out.println(buildBannerRow(i, bannerChars));
+        }
     }
 }
